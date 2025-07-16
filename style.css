@@ -1,0 +1,68 @@
+body {
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: 5% auto;
+  position: relative;
+}
+
+button {
+  margin: 1rem 0.5rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #ff6f91;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff3e68;
+}
+
+.hide {
+  display: none;
+}
+
+.option {
+  margin: 0.5rem 0;
+  padding: 0.7rem;
+  background-color: #ffe4e1;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #ffccd5;
+}
+
+.correct {
+  background-color: #28a745 !important;
+  color: white;
+}
+
+.wrong {
+  background-color: #dc3545 !important;
+  color: white;
+}
+
+canvas#confetti-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}

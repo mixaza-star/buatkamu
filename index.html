@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Cinta Lucu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bg-music" src="assets/bg-music.mp3" loop autoplay></audio>
+  <audio id="sound-correct" src="assets/correct.mp3"></audio>
+  <audio id="sound-wrong" src="assets/wrong.mp3"></audio>
+
+  <div class="container" id="menu">
+    <h1>❤️ Quiz Cinta Lucu ❤️</h1>
+    <button onclick="startGame()">Mulai</button>
+    <button onclick="toggleMusic()">🔈 Musik</button>
+    <button onclick="window.close()">Keluar</button>
+  </div>
+
+  <div class="container hide" id="quiz">
+    <canvas id="confetti-canvas"></canvas>
+    <div id="question-box"></div>
+    <div id="options-box"></div>
+  </div>
+
+  <div class="container hide" id="result">
+    <h2>Skor Akhir: <span id="score"></span></h2>
+    <p id="personal-message">Kamu tuh lucu banget deh… makasih udah main ❤️</p>
+    <input type="text" id="custom-question" placeholder="Tulis pertanyaan kamu di sini..." />
+    <button onclick="downloadLoveCard()">🏱 Download Kartu Cinta</button>
+    <button onclick="sendToWhatsApp()">📩 Kirim ke WhatsApp Kamu</button>
+    <button onclick="location.reload()">Main Lagi</button>
+  </div>
+
+   <audio id="bg-music" src="assets/bg-music.mp3" loop autoplay></audio>
+<audio id="sound-correct" src="assets/correct.mp3"></audio>
+<audio id="sound-wrong" src="assets/wrong.mp3"></audio>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+  <script>
+    function sendToWhatsApp() {
+      const number = "6283133908730"; // Ganti dengan nomormu
+      const scoreText = document.getElementById("score").textContent;
+      const userQuestion = document.getElementById("custom-question").value;
+      const message = `Haii, aku barusan main kuis romantis lucu kamu! 🥰
+Skorku: ${scoreText}
+Dan ini pertanyaanku buat kamu: ${userQuestion}`;
+      const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</body>
+</html>
